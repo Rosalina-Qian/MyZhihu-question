@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CollectionActivity" >
+
+        <RelativeLayout
+        android:id="@+id/div_topbar_collection" 
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="top"
+        android:background="@color/blue">
+        
+        <Button
+            android:id="@+id/cancel_collection"
+            android:layout_width="40dp"
+            android:layout_height="fill_parent"
+            android:drawableTop="@drawable/cancel"
+            android:layout_alignParentLeft="true"
+            />
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@+id/cancel_collection"
+            android:gravity="center"
+            android:text="@string/new_collection"
+            android:textColor="@color/white"
+            android:textSize="@dimen/top_title"/>
+        
+        <TextView 
+            android:id="@+id/collected_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/finish"
+            android:textColor="@color/white"
+            android:textSize="@dimen/top_subtitle"/>
+    </RelativeLayout>
+    
+    <EditText 
+        android:id="@+id/collectionName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/div_topbar_collection"
+        android:layout_marginTop="10dp"
+        android:hint="@string/collectionName"
+        android:textSize="18sp"/>
+     <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/Gray"
+        android:layout_below="@+id/collectionName"/>
+      <EditText 
+        android:id="@+id/collectionContent"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/div_tab_bar"
+        android:hint="@string/collectionContent"
+        android:textSize="14sp"/>
+</RelativeLayout>

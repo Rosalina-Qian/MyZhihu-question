@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Question</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="username">用户名：</string>
+    <string name="password">密码：</string>
+    <string name="ok_btn">确认</string>
+    <string name="cancel_btn">取消</string>
+    <string name="login_btn">登录</string>
+    <string name="register_btn">注册</string>
+    <string name="title_activity_comment">AnswerActivity</string>
+    <string name="title_activity_my_answer">MyAnswerActivity</string>
+    <string name="write_article">写文章</string>
+    <string name="ask_question">提问</string>
+    <string name="answer">回答</string>
+    <string name="invite_answer">邀请回答</string>
+    <string name="write_answer">写回答</string>
+    <string name="write_myanswer">写回答……</string>
+    <string name="author">作者保留权利</string>
+    <string name="voteNum">0</string>
+    <string name="bottombar_thank">感谢</string>
+    <string name="bottombar_thanks">已感谢</string>
+    <string name="bottombar_help">没有帮助</string>
+    <string name="bottombar_nohelp">撤销操作</string>
+    <string name="bottombar_collect">收藏</string>
+    <string name="bottombar_comment">评论</string>
+    <string name="topbar_comment">评论</string>
+    <string name="add_comment">添加评论</string>
+    <string name="from_topic">来自话题</string>
+    <string name="concern_question">关注问题</string>
+    <string name="concerned">已关注</string>
+    <string name="concern">关注</string>
+    <string name="neglect">忽略</string>
+    <string name="from_answer">评论者</string>
+    <string name="from_comment">用户id</string>
+    <string name="agree">赞同</string>
+    <string name="date">1年前</string>
+    <string name="charlist">对话列表</string>
+    <string name="select_collection">选择收藏夹</string>
+    <string name="add_collection">+新建收藏夹</string>
+    <string name="new_collection">新建收藏夹</string>
+    <string name="collectionName">请输入标题</string>
+    <string name="collectionContent">请输入收藏夹内容</string>
+    <string name="finish">完成</string>
+    <string name="vote_text">为答案投票</string>
+    <string name="vote_agree">赞同</string>
+    <string name="vote_disagree">反对</string>
+    <string name="title_activity_question">QuestionActivity</string>
+    <string name="title_activity_comment_detail">AnswerDetailActivity</string>
+    <string name="title_activity_my_comment">MyCommentActivity</string>
+    <string name="title_activity_collection">CollectionActivity</string>
+    <string name="title_activity_add_collection">AddCollectionActivity</string>
+    <string name="title_activity_person_detail">PersonDetailActivity</string>
+
+</resources>

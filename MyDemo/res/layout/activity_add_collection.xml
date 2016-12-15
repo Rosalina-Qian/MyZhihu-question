@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal" 
+    android:orientation="vertical">
+    
+    <RelativeLayout 
+        android:id="@+id/pop_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:gravity="center_horizontal" 
+    	android:orientation="horizontal"
+    	android:background="@color/Gray"
+        android:layout_alignParentBottom="true">
+        <TextView 
+        android:id="@+id/colloection_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/select_collection"/>
+    
+    <TextView 
+        android:id="@+id/add_collection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/colloection_tv"
+        android:layout_marginRight="15dp"
+        android:text="@string/add_collection"/>
+    
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+        android:id="@+id/finished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:text="@string/finish"/>
+        
+    </RelativeLayout>
+    </RelativeLayout>
+
+    
+</RelativeLayout>

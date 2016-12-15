@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+     android:background="@color/white">
+    
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+   >
+    <TextView 
+        android:id="@+id/vote_tv"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vote_text"
+        android:textSize="25px"/>
+    <LinearLayout 
+        android:layout_marginTop="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/vote_tv"
+        android:orientation="horizontal"
+        android:background="@color/white">
+    <TextView 
+        android:id="@+id/vote_agree"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/vote_agree"
+        android:gravity="center"
+        android:text="@string/vote_agree"
+        android:background="@color/white"/>
+     <TextView 
+         android:layout_marginTop="20dp"
+         android:id="@+id/vote_disagree"
+         android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/vote_disagree"
+        android:gravity="center"
+        android:text="@string/vote_disagree"
+        android:background="@color/white"/>
+     
+     </LinearLayout>
+</LinearLayout>
+    
+</RelativeLayout>

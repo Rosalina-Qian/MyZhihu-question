@@ -1,0 +1,103 @@
+a:link{
+	color:grey;
+	text-decoration:none; /*超链接无下划线*/
+}
+a:visited{
+	text-decoration:none; /*超链接无下划线*/
+}
+a:hover{
+	   color:blue;
+	   text-decoration:underline; /*鼠标放上去有下划线*/
+}
+.box{
+    display:none;            /* 默认对话框隐藏 */
+}
+.box .cancel .cancleCollect{ display:inline;}
+
+div.questionlist{
+			border:1px solid grey;
+}
+div.mycollection{
+			position:absolute; 
+			left:30%; 
+			height: 120px;
+			border:1px solid grey;
+			border-radius: 5px; 
+}
+div.myfavorite{
+			position:absolute; 
+			left:30%; 
+			height: 200px;
+			border:1px solid grey;
+			border-radius: 5px; 
+}
+#personnal_collection, #personnal_answer, #personalDetail{
+			border:1px solid grey;
+			border-radius: 5px; 
+}
+.add_focus{
+			width:100px;
+			height:50px;
+			border:1px solid grey;
+			border-radius: 5px; 
+}
+p.mycollection_diag{
+			border:1px dashed grey;
+			border-radius: 6px;
+			color: grey;
+			text-align: center;
+}
+p.collection_input{
+			border:5px solid white;
+			outline-color: blue;
+}
+div.collection-title{
+			background-color: blue;
+			color: white;		
+}
+a:link.focus{
+	color:blue;
+	text-decoration:none;
+}
+a:visited.focus{
+	color:blue;
+	text-decoration:none;
+}
+a:hover.focus{
+	color:blue;
+	text-decoration:underline; 
+}
+a:link.focus_id{
+	color:black;
+	text-decoration:none;
+}
+a:visited.focus_id{
+	color:black;
+	text-decoration:none;
+}
+a:hover.focus_id{
+	color:black;
+	text-decoration:underline; 
+}
+a.add-favorite{
+			background-color: bluish;
+			border: 1px;
+}
+#div_comment{
+	float:left;
+}
+#div_thanks, #div_collection, #div_help{
+	float:left;
+	margin-left: 20px;
+}
+#countAnswerNum, #countFocusQuesNum{
+	float:left;
+	margin-left: 20px;
+}
+#replyOtherComment{
+	float:left;
+	margin-left: 20px;
+}
+#cancelBtn, #submitanswerBtn{
+	display:inline;
+}

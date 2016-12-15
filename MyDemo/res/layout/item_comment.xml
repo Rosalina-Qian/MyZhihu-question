@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/comment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+       android:layout_marginLeft="20dp"
+        android:text="@string/from_comment" />
+    <TextView
+        android:id="@+id/objectId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/comment_tv" />
+    
+ 	<TextView
+        android:id="@+id/commentContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/objectId"
+        android:layout_alignParentLeft="true"
+       android:layout_marginLeft="20dp"
+        android:text="commentContent" />
+ 	
+ 	<LinearLayout 
+ 	    android:layout_width="wrap_content"
+ 	    android:layout_height="wrap_content"
+ 	    android:orientation="horizontal"
+ 	    android:layout_below="@+id/commentContent">
+ 	    
+ 	    <TextView
+        android:id="@+id/date_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginLeft="20dp" />
+ 	    <TextView
+        android:id="@+id/char_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_marginLeft="20dp"
+        android:text="@string/charlist" />
+ 	 
+ 	</LinearLayout>
+
+</RelativeLayout>

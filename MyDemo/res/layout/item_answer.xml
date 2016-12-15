@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+       <TextView
+        android:id="@+id/answer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+       android:layout_marginLeft="20dp"
+        android:text="@string/from_answer" />
+    <TextView
+        android:id="@+id/userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/answer_tv" />
+ 	<TextView
+        android:id="@+id/answerContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userId"
+        android:layout_alignParentLeft="true"
+       android:layout_marginLeft="20dp"
+        android:text="answerContent" />
+ 	
+ 	<LinearLayout 
+ 	    android:layout_width="wrap_content"
+ 	    android:layout_height="wrap_content"
+ 	    android:orientation="horizontal"
+ 	    android:id="@+id/answer_list_bar"
+ 	    android:layout_marginLeft="20dp"
+ 	    android:layout_below="@+id/answerContent">
+ 	    
+ 	    <TextView
+        android:id="@+id/agree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"/>
+ 	    <TextView
+        android:id="@+id/commentNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"/>
+ 	    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp" />
+ 	</LinearLayout>
+
+</RelativeLayout>
