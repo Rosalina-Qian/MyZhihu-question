@@ -9,16 +9,16 @@ import java.sql.SQLException;
 public class JDBCUtil {
 
 	//连接数据库地址语句
-//	private static String url = "jdbc:mysql://localhost:3306/zhihudb";
-	private static String url = "jdbc:sqlserver://123.207.18.20:1433;databaseName=ZhiHuNewDb";
+	private static String url = "jdbc:mysql://localhost:3306/zhihudb";
+//	private static String url = "jdbc:sqlserver://123.207.18.20:1433;databaseName=ZhiHuNewDb";
 	
 	//数据库应用名
-//	private static String user = "root";
-	private static String user = "sa";
+	private static String user = "root";
+//	private static String user = "sa";
 	
 	//数据库密码
-//	private static String pwd = "";
-	private static String pwd = "432@uestc";
+	private static String pwd = "";
+//	private static String pwd = "432@uestc";
 	
 	//连接对象
 	Connection con = null;
@@ -35,8 +35,8 @@ public class JDBCUtil {
 	 */
 	public Connection getCon(){
 		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Class.forName("com.mysql.jdbc.Driver");
+//			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			con = DriverManager.getConnection(url, user, pwd);
 		} catch (Exception e) {
 			// TODO: handle exception

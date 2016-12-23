@@ -58,7 +58,8 @@ public class SupportorOpposeDAO {
 	@SuppressWarnings("unused")
 	public void addSupport(SupportorOppose so){
 		ResultSet rs = null;
-		rs = util.query("select count(1) as count from supportoroppose where AnswerID=? and SupportOrOppose=?", so.getAnswerId(), so.getSupportOrOppose());
+		rs = util.query("select count(1) as count from supportoroppose where AnswerID=? and SupportOrOppose=? and UserID=?", 
+				so.getAnswerId(), so.getSupportOrOppose(), so.getUserId());
 		try {
 			int count = 0;
 			while(rs.next()){
@@ -71,20 +72,40 @@ public class SupportorOpposeDAO {
 					count++;
 					//向supportNum表中添加1条记录
 					if(i > 0 ){
-						int j = 0;
-						j = util.update("insert into supportNum(AnswerId, SupportCount)values(?,?)",
-								so.getAnswerId(), count);
-						System.out.println("已支持, count="+count);
+						ResultSet rsOfNum = null;
+						rsOfNum = util.query("select count(1) as count from supportNum where AnswerId=?", 
+								so.getAnswerId());
+						try{
+							while(rsOfNum.next()){
+								int supportnum = rsOfNum.getInt("count");
+								if(supportnum == 0){
+									int j = 0;
+									j = util.update("insert into supportNum(AnswerId, SupportCount)values(?,?)",
+											so.getAnswerId(), count);
+								}else{
+									int j = util.update("update supportNum set SupportCount=SupportCount+1 where AnswerId=?", 
+											so.getAnswerId());	
+								}
+							}
+						}catch (Exception e) {
+							// TODO: handle exception
+						}
 					} else{
-						System.out.println("insert failed");
+						System.out.println("failed");
 					}
 			    } else{
 			    	System.out.println("该记录已经添加过了");
 			    	
-					int j = 0;
-					j = util.update("insert into supportNum(AnswerId, SupportCount)values(?,?)",
-							so.getAnswerId(), count);
-					System.out.println("支持数："+count);
+			    	int i = 0;
+					i = util.update("delete from supportNum wherewhere AnswerID=? and SupportOrOppose=? and UserID=?",
+							so.getAnswerId(), so.getSupportOrOppose(), so.getUserId());
+					if(i > 0 ){
+						//移除该条赞记录后，在对应的数量表里赞-1
+						int j = util.update("update supportNum set SupportCount=SupportCount-1 where AnswerId=?", 
+								so.getAnswerId());
+					} else{
+						System.out.println("failed");
+					}
 			    }
 			} 
 		}catch (Exception e) {
@@ -101,8 +122,8 @@ public class SupportorOpposeDAO {
 	@SuppressWarnings("unused")
 	public void addOppose(SupportorOppose so){
 		ResultSet rs = null;
-		rs = util.query("select count(1) as count from supportoroppose where AnswerID=? and SupportOrOppose=?", 
-				so.getAnswerId(), so.getSupportOrOppose());
+		rs = util.query("select count(1) as count from supportoroppose where AnswerID=? and SupportOrOppose=? and UserID=?", 
+				so.getAnswerId(), so.getSupportOrOppose(), so.getUserId());
 		try {
 			int count = 0;
 			while(rs.next()){
@@ -115,29 +136,18 @@ public class SupportorOpposeDAO {
 							so.getAnswerId(), so.getUserId(), so.getSupportOrOppose());
 					//查询该反对者反对时是否之前存在支持
 					ResultSet rst = null;
-					rst = util.query("select count(1) as spCount from supportoroppose where AnswerID=? and SupportOrOppose=?", 
-							so.getAnswerId(), 1);
+					rst = util.query("select count(1) as spCount from supportoroppose where AnswerID=? and SupportOrOppose=? and UserID=?", 
+							so.getAnswerId(), 1, so.getUserId());
 					try {
 						int num = 0;
 						while(rst.next()){
-							num = rs.getInt("spCount");
+							num = rst.getInt("spCount");
 							if(num == 0){
 								System.out.println("ok");
 							} else{
 								//若存在，则在supportNum表中对应的回答下支持数-1
-								ResultSet rsOfNum = null;
-								rsOfNum = util.query("select SupportCount from supportNum where AnswerId=?", 
+								int j = util.update("update supportNum set SupportCount=SupportCount-1 where AnswerId=?", 
 										so.getAnswerId());
-								try{
-									int finalNum = 0;
-									while(rsOfNum.next()){
-										finalNum = rs.getInt("SupportCount");
-										finalNum--;
-										System.out.println("最后的支持数："+finalNum);
-									}
-								}catch (Exception e) {
-									// TODO: handle exception
-								}
 							}
 						} 
 					}catch (Exception e) {

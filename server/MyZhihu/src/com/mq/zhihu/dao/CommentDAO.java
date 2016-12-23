@@ -92,7 +92,7 @@ public class CommentDAO {
 	public List<Comment> queryOthers() {
 		// TODO Auto-generated method stub
 		ResultSet rs = null;
-		rs = util.query("SELECT FIRST.ObjectID,SECOND.UserID,SECOND.CommentTime,SECOND.CommentContent from comment FIRST,comment SECOND where FIRST.UserID=SECOND.ObjectID and FIRST.Category=SECOND.Category");
+		rs = util.query("SELECT DISTINCT FIRST.ObjectID,FIRST.UserID,FIRST.CommentTime,FIRST.CommentContent from comment FIRST,comment SECOND where FIRST.ObjectID=SECOND.UserID and FIRST.Category=5");
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//定义格式，不显示毫秒
 		List<Comment> list = new ArrayList<Comment>();
 		try {

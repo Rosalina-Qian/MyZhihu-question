@@ -18,16 +18,16 @@ div.questionlist{
 			border:1px solid grey;
 }
 div.mycollection{
-			position:absolute; 
-			left:30%; 
-			height: 120px;
+			position: fixed;
+			left: 30%;
+			top: 30%;
 			border:1px solid grey;
 			border-radius: 5px; 
 }
 div.myfavorite{
-			position:absolute; 
+			position:fixed; 
 			left:30%; 
-			height: 200px;
+			top: 30%;
 			border:1px solid grey;
 			border-radius: 5px; 
 }

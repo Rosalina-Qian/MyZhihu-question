@@ -32,9 +32,9 @@ import com.mq.zhihu.dao.FavoriteDAO;
 import com.mq.zhihu.dao.FocusDAO;
 import com.mq.zhihu.dao.MycollectionDAO;
 import com.mq.zhihu.dao.QuestionDAO;
-import com.mq.zhihu.dao.SupportNumDAO;
 import com.mq.zhihu.dao.ThanksDAO;
 import com.mq.zhihu.dao.UpvoteDAO;
+import com.mq.zhihu.dao.UpvoteNumDAO;
 import com.mq.zhihu.dao.UserInfoDAO;
 import com.mq.zhihu.entity.Userinfo;
 import com.mq.zhihu.json.JsonTools;
@@ -68,7 +68,7 @@ public class AnswerController {
 	private ThanksDAO thanksDao;
 	
 	@Autowired
-	private SupportNumDAO supportNumDao;
+	private UpvoteNumDAO upvoteNumDao;
 	
 	@Autowired
 	private UpvoteDAO upvoteDao;
@@ -242,11 +242,11 @@ public class AnswerController {
 	 * @throws UnsupportedEncodingException 
 	 */
 	@RequestMapping(value="/replyComment", method=RequestMethod.POST)
-	public String replyComment(@RequestParam("userName") String userName, @RequestParam("questionId") 
-					Integer qid, @RequestParam("userId") Integer uid, @RequestParam("objectId") Integer oid,
-					@RequestParam("category") Integer category, @RequestParam("commentContent") String commentContent) throws UnsupportedEncodingException{
+	public String replyComment( @RequestParam("questionId") Integer qid, @RequestParam("userId") Integer uid,
+			@RequestParam("objectId") Integer oid,@RequestParam("category") Integer category, 
+			@RequestParam("commentContent") String commentContent) throws UnsupportedEncodingException{
 		
-		System.out.println("username:" + userName + " questionId:" + qid + " userId:" + uid + " objectId:" + oid);
+		System.out.println(" questionId:" + qid + " userId:" + uid + " objectId:" + oid);
 		
 		//将输入框中的内容编码格式转换成utf-8格式
 		String commentcontent = new String(commentContent.getBytes("iso-8859-1"),"utf-8");
@@ -304,7 +304,7 @@ public class AnswerController {
 		map.put("question", questionDao.queryById(id));
 		
 		map.put("answers", answerDao.queryAll());
-		map.put("supportNum", supportNumDao.queryAll());
+		map.put("upNum", upvoteNumDao.queryAll());
 		
 		map.put("comments", commentDao.queryAll());
 		map.put("otherComments", commentDao.queryOthers());

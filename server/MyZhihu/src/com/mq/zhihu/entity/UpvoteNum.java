@@ -10,17 +10,17 @@ package com.mq.zhihu.entity;
 public class UpvoteNum {
 
 	private Integer id;
-	private Integer commentId;
+	private Integer commentUserId;
 	private Integer zan;
 	
 	public UpvoteNum() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UpvoteNum(Integer id, Integer commentId, Integer zan) {
+	public UpvoteNum(Integer id, Integer commentUserId, Integer zan) {
 		super();
 		this.id = id;
-		this.commentId = commentId;
+		this.commentUserId = commentUserId;
 		this.zan = zan;
 	}
 
@@ -32,12 +32,12 @@ public class UpvoteNum {
 		this.id = id;
 	}
 
-	public Integer getCommentId() {
-		return commentId;
+	public Integer getCommentUserId() {
+		return commentUserId;
 	}
 
-	public void setCommentId(Integer commentId) {
-		this.commentId = commentId;
+	public void setCommentUserId(Integer commentUserId) {
+		this.commentUserId = commentUserId;
 	}
 
 	public Integer getZan() {

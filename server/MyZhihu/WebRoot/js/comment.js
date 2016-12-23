@@ -1,10 +1,10 @@
 function collect(id){
 	//添加收藏
- 	document.getElementById('collection'+id).style.display="";
+ 	document.getElementById('collection'+id).style.display="block";
 }
 function newCollect(id){
  	//创建收藏夹
- 	document.getElementById('favorite'+id).style.display="";
+ 	document.getElementById('favorite'+id).style.display="block";
  	document.getElementById('collection'+id).style.display="none";
 }
 function cancelCollect(id){
@@ -46,13 +46,13 @@ function clickThanks(mmObj) {
 	mSubObj.html("Hello <b>world!</b>");
 	
 }
-//var num = 0;
+var num = 0;
 //感谢
 //function thanks(id, uid, qid){
 //	num++;
 //	if(num % 2 != 0){
 //		document.getElementById('thanks'+id).innerHTML = "取消感谢";
-//		window.location.href='thanks?objectId='+id+'&userId='+uid+'&questionId='+qid;
+//		//window.location.href='thanks?objectId='+id+'&userId='+uid+'&questionId='+qid;
 //	}else{
 //		document.getElementById('thanks'+id).innerHTML = "感谢";
 //		
@@ -62,9 +62,13 @@ function clickThanks(mmObj) {
 //没有帮助
 function help(id){
 	num++;
+
 	if(num % 2 != 0){
 		document.getElementById('help'+id).innerHTML = "取消没有帮助";
 	}else{
 		document.getElementById('help'+id).innerHTML = "没有帮助";
 	}
 }
+
+
+
